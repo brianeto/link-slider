@@ -2,34 +2,31 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>MySlider</title>
+    <title></title>
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <div class="p_slider">
-      <div class="p_slider__item">
-        <img src="images/adjustable_wrench.png" alt="">
-        <p>Adjustable <br> Wrench</p>
-      </div>
-      <div class="p_slider__item">
-        <img src="images/grip.png" alt="">
-        <p class="grip">Grip</p>
-      </div>
-      <div class="p_slider__item">
-        <img src="images/hammer.png" alt="">
-        <p>Hammer</p>
-      </div>
-    </div>
-    <div class="controls">
-      <div class="left">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrow.png" alt="">
-      </div>
-      <div class="right">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/217233/arrow.png" alt="">
-      </div>
-    </div>
-    <script src="js/main.js"></script>
+    <div class="container">
+      <ul id="slides">
+        <li class="slide" id="1">
+          <img src="images/myhacksaw.png" class="hacksaw" alt="">
+          <p class="hacksaw-text">Hacksaw</p>
+        </li>
+        <li class="slide showing" id="2">
+          <img src="images/chainsaw.png" class="chainsaw-img" alt="">
+          <p class="chainsaw-text">Chainsaw</p>
+        </li>
+        <li class="slide" id="3">
+          <img src="images/grip.png" alt="">
+          <p class="grip-text">Grip</p>
+        </li>
+      </ul>
+      <div class="buttons">
+        <button class="controls" id="previous">&lt;</button>
 
+        <button class="controls" id="next">&gt;</button>
+      </div>
+    </div>
+    <script src="js/main.js" charset="utf-8"></script>
   </body>
 </html>
