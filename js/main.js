@@ -20,16 +20,12 @@ function goToSlide(n){
 
   slides[previousSlide].className = 'slide first';
   slides[nextSlide].className = 'slide last';
-
-  console.log('la anterior', slides[previousSlide])
-  console.log('el siguiente', slides[nextSlide])
 }
 
 var next = document.getElementById('next');
 var previous = document.getElementById('previous');
 
 next.onclick = function(){
-  //console.log('el ON:', time)
   goToNextSlide();
 };
 
