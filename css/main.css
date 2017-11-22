@@ -166,3 +166,56 @@ p {
 
 button#next {
   float: right; }
+
+/* define mixin */
+/*MOBILE QUERIES*/
+@media (min-width: 320px) and (max-width: 640px) {
+  body {
+    height: 200vh;
+    background-repeat: no-repeat; }
+  .first {
+    display: none; }
+  .showing {
+    left: 4%;
+    height: 90vh;
+    width: 45%;
+    top: -150px; }
+    .showing p {
+      top: 438px;
+      left: 80px;
+      font-size: 1em; }
+    .showing img {
+      width: 440px;
+      padding-left: 45px;
+      padding-top: 100px; }
+    .showing .hacksaw {
+      top: -25px;
+      left: -190px; }
+    .showing .grip {
+      top: 5px;
+      left: -175px; }
+  .last {
+    display: none; }
+  .container {
+    top: 32%;
+    width: 180vw; } }
+
+/*TABLET QUERIES*/
+@media (min-width: 641px) and (max-width: 1024px) {
+  .first {
+    display: none; }
+  .showing img {
+    width: 440px;
+    padding-left: 45px;
+    padding-top: 50px;
+    top: -80px; }
+  .showing .hacksaw {
+    left: -167px; }
+  .showing .grip {
+    left: -155px; }
+  .showing .chainsaw {
+    top: 10px; }
+  .last {
+    display: none; } }
+
+/*DESKTOP QUERIES*/

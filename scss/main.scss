@@ -1,3 +1,8 @@
+$phone-min: 320px;
+$phone-max: 640px;
+$tablet: 980px;
+$desktop: 1024px;
+
 body {
   margin:0;
   padding:0;
@@ -199,4 +204,102 @@ p {
 }
 button#next {
   float: right;
+}
+
+/* define mixin */
+@mixin breakpoint($media) {
+  @if $media == mobile {
+    @media (min-width: $phone-min) and (max-width: $phone-max) { @content; }
+  }
+  @else if $media == tablet {
+    @media (min-width: $phone-max + 1) and (max-width: $desktop) { @content; }
+  }
+  @else if $media == desktop {
+    @media (min-width: $desktop + 1) { @content; }
+  }
+}
+
+
+/*MOBILE QUERIES*/
+@include breakpoint(mobile) {
+
+  body {
+    height: 200vh;
+    background-repeat: no-repeat;
+  }
+
+  .first {
+    display: none;
+  }
+  .showing {
+    left: 4%;
+    height: 90vh;
+    width: 45%;
+    top: -150px;
+
+    & p {
+      top: 438px;
+      left: 80px;
+      font-size: 1em;
+
+      &.slide-text-grip {
+        left: 50%;
+      }
+    }
+    & img {
+      width: 440px;
+      padding-left: 45px;
+      padding-top: 100px;
+    }
+    & .hacksaw {
+      top: -25px;
+      left: -190px;
+    }
+    & .grip {
+      top: 5px;
+      left: -175px;
+    }
+  }
+  .last {
+    display: none;
+  }
+  .container {
+    top: 32%;
+    width: 180vw;
+  }
+}
+
+
+/*TABLET QUERIES*/
+@include breakpoint(tablet) {
+
+  .first {
+    display: none;
+  }
+  .showing {
+
+    & img {
+      width: 440px;
+      padding-left: 45px;
+      padding-top: 50px;
+      top: -80px;
+    }
+    & .hacksaw {
+      left: -167px;
+    }
+    & .grip {
+      left: -155px;
+    }
+    & .chainsaw {
+      top: 10px;
+    }
+  }
+  .last {
+    display: none;
+  }
+}
+
+/*DESKTOP QUERIES*/
+@include breakpoint(desktop) {
+
 }

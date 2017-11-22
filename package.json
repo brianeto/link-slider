@@ -21,6 +21,7 @@
     "gulp-sass": "^3.1.0"
   },
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "sass-breakpoints": "^2.1.0"
   }
 }
