@@ -1,3 +1,5 @@
+// Variables
+
 $phone-min: 320px;
 $phone-max: 640px;
 $tablet: 980px;
@@ -13,15 +15,14 @@ body {
   background-image: url('https://s.tmimgcdn.com/blog/wp-content/uploads/2014/09/5-Blurred-Backgrounds.jpg');
   background-size: cover;
 }
+
 p {
-  position: absolute;
-  top: 80px;
-  left: -25px;
   color: black;
   font-family: 'Roboto', sans-serif;
   font-size: 0.5em;
-  padding: 30px;
 }
+
+
 #slides {
   position: relative;
   height: 300px;
@@ -31,9 +32,9 @@ p {
   list-style-type: none;
   display: flex;
 }
+
 .slide {
-  //position: absolute;
-  width: 300px;
+  position: absolute;
   font-size: 40px;
   padding: 40px;
   box-sizing: border-box;
@@ -45,11 +46,20 @@ p {
   border: 7px solid;
   margin: 75px;
   top: 15px;
+  min-width: 120px;
+  width: 100px;
+  height: 40%;
+  text-align: center;
+  transition: 2s ease-in-out;
 
-  &-desciption {
-    display: none;
+  // Slider images
+
+  &-img-chainsaw, &-img-grip {
+    bottom: 45px;
   }
-
+  &-img-hacksaw {
+    bottom: 1.5em;
+  }
   img {
     width:200px;
     transform:scale(1);
@@ -62,32 +72,28 @@ p {
     -webkit-gradient(linear, left top, left bottom, from(transparent),
     color-stop(50%, transparent), to(rgba(255,255,255,0.2)));
     left: -93px;
-    bottom: 45px;
+
   }
-  .hacksaw {
-    bottom: 60px;
+
+  // Slider Description
+  &-description {
+    display: none;
   }
-}
-.slide {
-  position: absolute;
-  min-width: 120px;
-  width: 100px;
-  height: 40%;
-  tet-align: center;
-  //background-color: #D4E1EA;
-  transition: 2s ease-in-out;
+
 }
 
+// last slide
 .last {
   animation: moveRight 4s;
   transform:translateX(75vw);
 }
-
+// first slide
 .first {
   animation: moveLeft 4s;
   transform:translateX(5vw);
 }
 
+// slide showing
 .showing {
   margin: 0 auto;
   transform:scale(2);
@@ -97,26 +103,7 @@ p {
   top: -72px;
   left: -100px;
   border: 11px solid;
-  &.slide-desciption {
-    display: block;
-    top: 66vh;
-    width: 400px;
-    left: 1vw;
-    font-size: 0.4em;
-    color: lightgray;
-  }
-  &.slide-text-grip {
-    left: 230px;
-  }
-  /*  &:before {
-  content:"";
-  position: absolute;
-  border: 1px solid white;
-  width: 100%;
-  height: 100%;
-  top: -30px;
-  right: -30px;
-} */
+
   &:after {
     content: "";
     background-image: url(/images/shopping-basket.svg);
@@ -133,27 +120,36 @@ p {
     box-shadow: 0 0 10px grey;
     background-position: 50% 45%;
   }
+  // Slider Showing Description
+  .slide-description {
+    display: block;
+    top: 66vh;
+    width: 400px;
+    left: 1vw;
+    font-size: 0.4em;
+    color: lightgray;
+  }
+
+  &-text-grip {
+    left: 230px;
+  }
+
+  // slide showing images
   img {
     width: 650px;
-    top: 25px;
-  }
-  .hacksaw {
-    top: -40px;
+    top: -12px;
     left: -200px;
   }
-  .grip {
-    top: -10px;
-    left: -185px;
+  .slide-img-chainsaw {
+    top: 5vh;
   }
-  .chainsaw {
-    top: 35px;
-    left: -160px;
-  }
+  //Showing paragraph
   p {
     color: white;
     top: 383px;
     left: 166px;
     font-size: 0.7em;
+
     &.hacksaw-text {
       left: 30px;
     }
@@ -248,16 +244,8 @@ button#next {
     }
     & img {
       width: 440px;
-      padding-left: 45px;
+      padding-left: 21vw;
       padding-top: 100px;
-    }
-    & .hacksaw {
-      top: -25px;
-      left: -190px;
-    }
-    & .grip {
-      top: 5px;
-      left: -175px;
     }
   }
   .last {
@@ -282,16 +270,11 @@ button#next {
       width: 440px;
       padding-left: 45px;
       padding-top: 50px;
-      top: -80px;
+      left: -3.5em;
+      top: -5vh;
     }
-    & .hacksaw {
-      left: -167px;
-    }
-    & .grip {
-      left: -155px;
-    }
-    & .chainsaw {
-      top: 10px;
+    & .slide-img-chainsaw {
+    top: -1vh;
     }
   }
   .last {

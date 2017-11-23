@@ -9,13 +9,9 @@ body {
   background-size: cover; }
 
 p {
-  position: absolute;
-  top: 80px;
-  left: -25px;
   color: black;
   font-family: 'Roboto', sans-serif;
-  font-size: 0.5em;
-  padding: 30px; }
+  font-size: 0.5em; }
 
 #slides {
   position: relative;
@@ -27,7 +23,7 @@ p {
   display: flex; }
 
 .slide {
-  width: 300px;
+  position: absolute;
   font-size: 40px;
   padding: 40px;
   box-sizing: border-box;
@@ -38,27 +34,25 @@ p {
   background-color: transparent;
   border: 7px solid;
   margin: 75px;
-  top: 15px; }
-  .slide-desciption {
-    display: none; }
+  top: 15px;
+  min-width: 120px;
+  width: 100px;
+  height: 40%;
+  text-align: center;
+  transition: 2s ease-in-out; }
+  .slide-img-chainsaw, .slide-img-grip {
+    bottom: 45px; }
+  .slide-img-hacksaw {
+    bottom: 1.5em; }
   .slide img {
     width: 200px;
     transform: scale(1);
     position: relative;
     animation: scale_bounce 1.2s .4s forwards;
     -webkit-box-reflect: below 4px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(50%, transparent), to(rgba(255, 255, 255, 0.2)));
-    left: -93px;
-    bottom: 45px; }
-  .slide .hacksaw {
-    bottom: 60px; }
-
-.slide {
-  position: absolute;
-  min-width: 120px;
-  width: 100px;
-  height: 40%;
-  tet-align: center;
-  transition: 2s ease-in-out; }
+    left: -93px; }
+  .slide-description {
+    display: none; }
 
 .last {
   animation: moveRight 4s;
@@ -76,25 +70,7 @@ p {
   width: 350px;
   top: -72px;
   left: -100px;
-  border: 11px solid;
-  /*  &:before {
-  content:"";
-  position: absolute;
-  border: 1px solid white;
-  width: 100%;
-  height: 100%;
-  top: -30px;
-  right: -30px;
-} */ }
-  .showing.slide-desciption {
-    display: block;
-    top: 66vh;
-    width: 400px;
-    left: 1vw;
-    font-size: 0.4em;
-    color: lightgray; }
-  .showing.slide-text-grip {
-    left: 230px; }
+  border: 11px solid; }
   .showing:after {
     content: "";
     background-image: url(/images/shopping-basket.svg);
@@ -110,18 +86,21 @@ p {
     left: -35px;
     box-shadow: 0 0 10px grey;
     background-position: 50% 45%; }
+  .showing .slide-description {
+    display: block;
+    top: 66vh;
+    width: 400px;
+    left: 1vw;
+    font-size: 0.4em;
+    color: lightgray; }
+  .showing-text-grip {
+    left: 230px; }
   .showing img {
     width: 650px;
-    top: 25px; }
-  .showing .hacksaw {
-    top: -40px;
+    top: -12px;
     left: -200px; }
-  .showing .grip {
-    top: -10px;
-    left: -185px; }
-  .showing .chainsaw {
-    top: 35px;
-    left: -160px; }
+  .showing .slide-img-chainsaw {
+    top: 5vh; }
   .showing p {
     color: white;
     top: 383px;
@@ -184,16 +163,12 @@ button#next {
       top: 438px;
       left: 80px;
       font-size: 1em; }
+      .showing p.slide-text-grip {
+        left: 50%; }
     .showing img {
       width: 440px;
-      padding-left: 45px;
+      padding-left: 21vw;
       padding-top: 100px; }
-    .showing .hacksaw {
-      top: -25px;
-      left: -190px; }
-    .showing .grip {
-      top: 5px;
-      left: -175px; }
   .last {
     display: none; }
   .container {
@@ -208,13 +183,10 @@ button#next {
     width: 440px;
     padding-left: 45px;
     padding-top: 50px;
-    top: -80px; }
-  .showing .hacksaw {
-    left: -167px; }
-  .showing .grip {
-    left: -155px; }
-  .showing .chainsaw {
-    top: 10px; }
+    left: -3.5em;
+    top: -5vh; }
+  .showing .slide-img-chainsaw {
+    top: -1vh; }
   .last {
     display: none; } }
 
