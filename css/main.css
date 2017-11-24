@@ -30,7 +30,6 @@ p {
   background: #333;
   color: #fff;
   background-size: contain;
-  background-repeat: no-repeat;
   background-color: transparent;
   border: 7px solid;
   margin: 75px;
@@ -88,11 +87,10 @@ p {
     background-position: 50% 45%; }
   .showing .slide-description {
     display: block;
-    top: 66vh;
     width: 400px;
-    left: 1vw;
     font-size: 0.4em;
-    color: lightgray; }
+    color: lightgray;
+    text-align: start; }
   .showing-text-grip {
     left: 230px; }
   .showing img {
@@ -103,15 +101,7 @@ p {
     top: 5vh; }
   .showing p {
     color: white;
-    top: 383px;
-    left: 166px;
     font-size: 0.7em; }
-    .showing p.hacksaw-text {
-      left: 30px; }
-    .showing p.chainsaw-text {
-      left: 25px; }
-    .showing p.slide-text-grip {
-      left: 230px; }
 
 .controls {
   display: inline-block;
@@ -150,8 +140,7 @@ button#next {
 /*MOBILE QUERIES*/
 @media (min-width: 320px) and (max-width: 640px) {
   body {
-    height: 200vh;
-    background-repeat: no-repeat; }
+    height: 200vh; }
   .first {
     display: none; }
   .showing {
@@ -159,12 +148,26 @@ button#next {
     height: 90vh;
     width: 45%;
     top: -150px; }
+    .showing .slide-description {
+      display: block;
+      width: 48vw;
+      padding-top: 3vh;
+      font-size: 0.4em; }
+    .showing .slide-img-hacksaw {
+      top: 75px;
+      padding-top: 0; }
     .showing p {
       top: 438px;
       left: 80px;
       font-size: 1em; }
       .showing p.slide-text-grip {
         left: 50%; }
+      .showing p.slide-text-hacksaw {
+        padding-top: 32px; }
+      .showing p.slide-text-chainsaw {
+        padding-top: 6px; }
+      .showing p.slide-text-grip {
+        padding-top: 12px; }
     .showing img {
       width: 440px;
       padding-left: 21vw;
@@ -187,7 +190,31 @@ button#next {
     top: -5vh; }
   .showing .slide-img-chainsaw {
     top: -1vh; }
+  .showing .slide-text-chainsaw {
+    margin-top: 0.3em;
+    margin-left: 5.5em; }
+  .showing .slide-text-grip {
+    margin-top: 0.5em;
+    margin-left: 8em; }
+  .showing .slide-text-hacksaw {
+    margin-top: -2.2em;
+    margin-left: 5.7em; }
+  .showing .slide-description {
+    text-align: start; }
   .last {
     display: none; } }
 
 /*DESKTOP QUERIES*/
+@media (min-width: 1025px) {
+  .showing p.slide-text-chainsaw {
+    margin-top: -0.1em;
+    margin-left: 2.6em;
+    font-size: 1em; }
+  .showing p.slide-text-hacksaw {
+    margin-top: -2.6em;
+    margin-left: 2.8em;
+    font-size: 1em; }
+  .showing p.slide-text-grip {
+    margin-top: 0.2em;
+    margin-left: 5em;
+    font-size: 1em; } }
