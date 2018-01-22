@@ -1,0 +1,266 @@
+// All slides
+#slides {
+  position: relative;
+  height: 300px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+}
+.slide {
+  position: absolute;
+  font-size: 40px;
+  padding: 40px;
+  box-sizing: border-box;
+  color: $white;
+  background-size: contain;
+  background-color: transparent;
+  border: 7px solid;
+  margin: 75px;
+  top: 15px;
+  min-width: 120px;
+  width: 100px;
+  height: 40%;
+  text-align: center;
+  transition: 2s ease-in-out;
+  // Slider images
+  // chainsaw and grip images
+  &-img-chainsaw, &-img-grip {
+    bottom: 45px;
+  }
+  // hacksaw image
+  &-img-hacksaw {
+    bottom: 1.5em;
+  }
+  // all images
+  img {
+    width: 200px;
+    transform: scale(1);
+    position: relative;
+    animation: scale_bounce 1.2s .4s forwards;
+    -webkit-box-reflect: below 4px
+      -webkit-gradient(linear, left top, left bottom, from(transparent),
+      color-stop(50%, transparent), to(rgba(255,255,255,.2)));
+    left: -93px;
+  }
+  // Slider Description
+  &-description {
+    display: none;
+  }
+}
+
+// last slide
+.last {
+  animation: moveRight 4s;
+  transform: translateX(75vw);
+}
+// first slide
+.first {
+  animation: moveLeft 4s;
+  transform: translateX(5vw);
+}
+
+// slide showing
+.showing {
+  margin: 0 auto;
+  transform: translateX(45vw);
+  height: 70vh;
+  width: 350px;
+  top: -72px;
+  left: -100px;
+  border: 11px solid;
+  &:after {
+    content: "";
+    background-image: url(/images/shopping-basket.svg);
+    background-size: 35px;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border-radius: 50%;
+    top: 10%;
+    left: -35px;
+    box-shadow: 0 0 10px grey;
+    background-position: 50% 45%;
+  }
+  // Slider Showing Description
+  & .slide-description {
+    display: block;
+    width: 400px;
+    font-size: .4em;
+    color: lightgray;
+    text-align: start;
+  }
+  // grip text slide
+  &-text-grip {
+    left: 230px;
+  }
+
+  // slide showing images
+  img {
+    width: 650px;
+    top: -12px;
+    left: -200px;
+  }
+  // chainsaw showing image
+  .slide-img-chainsaw {
+    top: 5vh;
+  }
+  //Showing paragraph
+  p {
+    color: white;
+    font-size: .7em;
+  }
+}
+// controls wrapper
+button#next {
+  float: right;
+}
+.controls {
+  display: inline-block;
+  background-color: transparent;
+  color: darkslategray;
+  padding: 20px 0;
+  font-size: 80px;
+  cursor: pointer;
+  margin: 10px 0 0 10px;
+  width: 70px;
+  border: none;
+  transition: all .4s ease-in-out;
+  &:hover, :focus {
+    border: none;
+    outline: none;
+  }
+}
+/* MOBILE QUERIES */
+@include breakpoint(mobile) {
+  body {
+    height: 200vh;
+  }
+
+  .first {
+    display: none;
+  }
+  .showing {
+    left: 4%;
+    height: 90vh;
+    width: 45%;
+    top: -150px;
+
+    & .slide-description {
+      display: block;
+      width: 48vw;
+      padding-top: 3vh;
+      font-size: .4em;
+    }
+    & .slide-img-hacksaw {
+      top: 75px;
+      padding-top: 0;
+    }
+    & p {
+      top: 438px;
+      left: 80px;
+      font-size: 1em;
+
+      &.slide-text-grip {
+        left: 50%;
+      }
+      &.slide-text-hacksaw {
+        padding-top: 1.5em;
+      }
+      &.slide-text-chainsaw,  &.slide-text-grip {
+        padding-top: 1em;
+      }
+    }
+    & img {
+      width: 440px;
+      padding-left: 21vw;
+      padding-top: 100px;
+    }
+  }
+  .last {
+    display: none;
+  }
+  .container {
+    top: 32%;
+    width: 180vw;
+  }
+}
+/* TABLET QUERIES */
+@include breakpoint(tablet) {
+
+  .first {
+    display: none;
+  }
+  .showing {
+
+    & img {
+      width: 440px;
+      padding-left: 45px;
+      padding-top: 50px;
+      left: -3.5em;
+      top: -5vh;
+    }
+    & .slide-img-chainsaw {
+      top: -1vh;
+    }
+    & .slide-text-chainsaw {
+      margin-top: 1em;
+      margin-left: 5.5em;
+    }
+    & .slide-text-grip {
+      margin-top: 1em;
+      margin-left: 8em;
+    }
+    & .slide-text-hacksaw {
+      margin-top: -1.5em;
+      margin-left: 5.7em;
+    }
+    & .slide-description {
+      text-align: start;
+    }
+  }
+  .last {
+    display: none;
+  }
+}
+/* DESKTOP QUERIES */
+@include breakpoint(desktop) {
+
+  p.slide-text-hacksaw {
+    margin-top: -3.5em;
+    margin-left: -1.4em;
+  }
+  p.slide-text-chainsaw {
+    margin-top: -2em;
+    margin-left: -1.4em;
+  }
+  p.slide-text-grip {
+    margin-top: -2em;
+    margin-left: -1em;
+  }
+  .showing {
+
+    p {
+
+      &.slide-text-chainsaw {
+        margin-top: -.1em;
+        margin-left: 2.6em;
+        font-size: 1em;
+      }
+      &.slide-text-hacksaw {
+        margin-top: -2.6em;
+        margin-left: 2.8em;
+        font-size: 1em;
+      }
+      &.slide-text-grip {
+        margin-top: .2em;
+        margin-left: 5em;
+        font-size: 1em;
+      }
+    }
+  }
+}

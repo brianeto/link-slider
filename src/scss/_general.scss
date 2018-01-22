@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  background-image: url('https://s.tmimgcdn.com/blog/wp-content/uploads/2014/09/5-Blurred-Backgrounds.jpg');
+  background-size: cover;
+  &, * {
+    font-family: $main-font;
+  }
+}
+
+p {
+  color: black;
+  font-size: .5em;
+}
+//wrapper
+.container {
+  position: relative;
+  top: 25vh;
+}

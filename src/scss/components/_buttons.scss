@@ -1,0 +1,12 @@
+.buttons {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 20%;
+  z-index: 10;
+  font-size: 0;
+  transition: all .4s ease-in-out;
+  &:hover {
+    background-color: transparent;
+  }
+}

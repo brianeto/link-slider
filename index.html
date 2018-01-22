@@ -1,39 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
-    <link rel="stylesheet" href="css/main.css">
-  </head>
-  <body>
-    <div class="container">
-          <ul id="slides">
-            <li class="slide first">
-              <img src="images/myhacksaw.png" class="slide-img-hacksaw" alt="hacksawimg">
-              <p class="slide-text-hacksaw">Hacksaw</p>
-              <p class="slide-description">
-                Code: 171.1112010-40  Mark: 171-40</p>
-            </li>
-            <li class="slide showing">
-              <img src="images/chainsaw.png" class="slide-img-chainsaw" alt="chainsawimg">
-              <p class="slide-text-chainsaw">Chainsaw</p>
-              <p class="slide-description">
-                Code: 171.1112010-40  Mark: 171-40</p>
-            </li>
-            <li class="slide last">
-              <img src="images/grip.png" class="slide-img-grip" alt="gripimg">
-              <p class="slide-text-grip">Grip</p>
-              <p class="slide-description">
-                Code: 171.1112010-40  Mark: 171-40</p>
-            </li>
-          </ul>
-          <div class="buttons">
-            <button class="controls" id="previous">&lt;</button>
-
-            <button class="controls" id="next">&gt;</button>
-          </div>
-        </div>
-    <script src="js/main.js" charset="utf-8"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sliders -->
+    <ul id="slides">
+      <!-- First Slide -->
+      <li class="slide first">
+        <img src="images/myhacksaw.png" class="slide-img-hacksaw" alt="hacksawimg">
+        <p class="slide-text-hacksaw">Hacksaw</p>
+        <p class="slide-description">
+          Code: 171.1112010-40  Mark: 171-40</p>
+      </li>
+      <!-- Second Slide -->
+      <li class="slide showing">
+        <img src="images/chainsaw.png" class="slide-img-chainsaw" alt="chainsawimg">
+        <p class="slide-text-chainsaw">Chainsaw</p>
+        <p class="slide-description">
+          Code: 171.1112010-40  Mark: 171-40</p>
+      </li>
+      <!-- Third Slide -->
+      <li class="slide last">
+        <img src="images/grip.png" class="slide-img-grip" alt="gripimg">
+        <p class="slide-text-grip">Grip</p>
+        <p class="slide-description">
+          Code: 171.1112010-40  Mark: 171-40</p>
+      </li>
+    </ul>
+    <!-- Buttons -->
+    <div class="buttons">
+      <!-- Left/Previous Button -->
+      <button class="controls" id="previous">&lt;</button>
+      <!-- Right/Next Button -->
+      <button class="controls" id="next">&gt;</button>
+    </div>
+  </div>
+  <script src="main.js" charset="utf-8"></script>
+</body>
 </html>
