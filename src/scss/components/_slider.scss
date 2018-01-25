@@ -1,4 +1,5 @@
-// All slides
+/* All slides */
+// slides ID
 #slides {
   position: relative;
   height: 300px;
@@ -8,6 +9,7 @@
   list-style-type: none;
   display: flex;
 }
+// slide class
 .slide {
   position: absolute;
   font-size: 40px;
@@ -140,7 +142,6 @@ button#next {
   body {
     height: 200vh;
   }
-
   .first {
     display: none;
   }
