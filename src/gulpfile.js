@@ -3,6 +3,7 @@ const
   sass = require('gulp-sass'),
   postcss = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
+  babel = require('gulp-babel')
   uglify = require('gulp-uglify'),
   imagemin = require('gulp-imagemin'),
   browserSync = require('browser-sync').create();
@@ -22,6 +23,7 @@ gulp.task('sass', () =>
 // javascript tasks
 gulp.task('js', () =>
   gulp.src('js/main.js')
+  .pipe(babel({ presets: ['env'] }))
   .pipe(uglify())
   .pipe(gulp.dest('../'))
 );
@@ -53,5 +55,6 @@ gulp.task('default', ['sass', 'js'], () => {
       }
   });
   gulp.watch('scss/**/*.scss', ['sass']);
+  gulp.watch('js/main.js', ['js']);
   gulp.watch('*.html').on('change', browserSync.reload);
 });

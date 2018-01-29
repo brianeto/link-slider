@@ -20,6 +20,7 @@
   "indent": 2,
   "latedef": true,
   "maxdepth": 3,
+  "expr": true,
   "browser": true,
   "esversion": 6
 }
